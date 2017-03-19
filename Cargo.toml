@@ -1,0 +1,8 @@
+[package]
+name = "codejam_rust"
+version = "0.0.1"
+authors = ["Nidev Plontra <nidev.plontra@gmail.com>"]
+description = "Rust main.rs with basic stdin helpers"
+keywords = ["google", "codejam", "rust"]
+
+[dependencies]
