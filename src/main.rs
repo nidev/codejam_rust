@@ -1,5 +1,4 @@
 use std::io;
-use std::str::FromStr;
 
 type Number = i32;
 
@@ -47,7 +46,7 @@ fn get_nums_in_line() -> Vec<Number> {
             let inputs = raw_input.split_whitespace();
 
             for x in inputs {
-                numbers.push(i32::from_str(x).unwrap());
+                numbers.push(x.parse::<Number>().unwrap());
             }
         },
         Err(_) => {
@@ -64,7 +63,7 @@ fn get_num_in_line() -> Option<Number> {
 
     match io::stdin().read_line(&mut buf) {
         Ok(_) => {
-            match i32::from_str(buf.trim_right()) {
+            match buf.trim_right().parse::<Number>() {
                 Ok(x) => {
                     return Some::<Number>(x);
                 },
